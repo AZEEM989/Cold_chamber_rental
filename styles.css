@@ -1,0 +1,101 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: "Roboto", serif;
+}
+body {
+    font-family: Arial, sans-serif;
+    background:url(/DALL·E\ 2025-02-22\ 22.21.20\ -\ A\ modern\ cold\ storage\ chamber\ with\ stainless\ steel\ walls\,\ bright\ LED\ lighting\,\ and\ industrial\ cooling\ units\ mounted\ on\ the\ ceiling.\ The\ room\ is\ filled.webp);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+.container {
+    margin: 5rem 0;
+    width: 90vw;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    align-items: center;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+/* Hide the number input spinner */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.personalinfo{
+    /* background-color: yellowgreen; */
+    width: 95%;
+    padding: 1rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.personalinfoname{
+    width: 30%;
+ /* background-color: aquamarine; */
+}
+.personalinfoname input{
+    
+    width: 90%;
+    font-size: 15px;
+}
+.personalinfoname select{
+    width: 95%;
+    height: 3rem;
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+    font-size: 4rem;
+}
+label {
+    font-weight: bold;
+    margin-top: 10px;
+    display: block;
+}
+input, select {
+    width: 30%;
+    
+    height: 2rem;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+button {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: 10%;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+button:hover {
+    background-color: #218838;
+}
+h3{
+    /* background-color: yellowgreen; */
+    text-align: left;
+    width: 95%;
+    font-size: 30px;
+    text-decoration: underline;
+}
