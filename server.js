@@ -15,7 +15,7 @@ const db = mysql.createConnection({
     host: "localhost",
     user: "root",
     password: "007@Timedie",
-    database: "coldchamber"
+    database: "chamber"
 });
 
 db.connect((err) => {
@@ -30,17 +30,17 @@ db.connect((err) => {
 app.post("/save", (req, res) => {
     console.log("Received Request Body:", req.body); // ✅ Now inside the function
 
-    const { NAME, ADDRESS, MOBILE_NO, fruit, BOX_WEIGHT, BOX_QUANTITY, TOTAL_AMOUNT, PAID_AMOUNT, UNPAID_AMOUNT } = req.body;
+    const { NAME, ADDRESS, MOBILE_NO,LOT_NO, fruit, BOX_WEIGHT, BOX_QUANTITY, TOTAL_AMOUNT, PAID_AMOUNT, UNPAID_AMOUNT } = req.body;
 
     // Check if any field is missing
-    if (!NAME || !ADDRESS || !MOBILE_NO || !fruit || !BOX_WEIGHT || !BOX_QUANTITY || !TOTAL_AMOUNT || !PAID_AMOUNT || !UNPAID_AMOUNT) {
+    if (!NAME || !ADDRESS || !MOBILE_NO || !LOT_NO ||!fruit || !BOX_WEIGHT || !BOX_QUANTITY || !TOTAL_AMOUNT || !PAID_AMOUNT || !UNPAID_AMOUNT) {
         return res.status(400).json({ error: "❌ All fields are required!" });
     }
 
-    const sql = `INSERT INTO clients (NAME, ADDRESS, MOBILE_NO, fruit, BOX_WEIGHT, BOX_QUANTITY, TOTAL_AMOUNT, PAID_AMOUNT, UNPAID_AMOUNT) 
-                 VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`;
+    const sql = `INSERT INTO clients (NAME, ADDRESS, MOBILE_NO,LOT_NO, fruit, BOX_WEIGHT, BOX_QUANTITY, TOTAL_AMOUNT, PAID_AMOUNT, UNPAID_AMOUNT) 
+                 VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`;
 
-    db.query(sql, [NAME, ADDRESS, MOBILE_NO, fruit, BOX_WEIGHT, BOX_QUANTITY, TOTAL_AMOUNT, PAID_AMOUNT, UNPAID_AMOUNT], (err, result) => {
+    db.query(sql, [NAME, ADDRESS, MOBILE_NO, LOT_NO,fruit, BOX_WEIGHT, BOX_QUANTITY, TOTAL_AMOUNT, PAID_AMOUNT, UNPAID_AMOUNT], (err, result) => {
         if (err) {
             console.error("❌ Database Insert Error:", err.message);
             return res.status(500).json({ error: "Database Insert Error: " + err.message });

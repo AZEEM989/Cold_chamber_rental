@@ -19,6 +19,7 @@ function submitData() {
     let NAME = document.getElementById("name").value;
     let ADDRESS = document.getElementById("address").value;
     let MOBILE_NO= document.getElementById("mobile").value;
+    let LOT_NO= document.getElementById("lotno").value;
     let fruit = document.getElementById("fruit").value;
     let BOX_WEIGHT = document.getElementById("weight").value;
     let BOX_QUANTITY= document.getElementById("quantity").value;
@@ -26,7 +27,7 @@ function submitData() {
     let PAID_AMOUNT= document.getElementById("paid").value;
     let  UNPAID_AMOUNT= document.getElementById("balance").value;
     
-    let data = { NAME, ADDRESS, MOBILE_NO, fruit, BOX_WEIGHT, BOX_QUANTITY, TOTAL_AMOUNT, PAID_AMOUNT, UNPAID_AMOUNT };
+    let data = { NAME, ADDRESS, MOBILE_NO, LOT_NO,fruit, BOX_WEIGHT, BOX_QUANTITY, TOTAL_AMOUNT, PAID_AMOUNT, UNPAID_AMOUNT };
     fetch('http://127.0.0.1:5000/save', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
